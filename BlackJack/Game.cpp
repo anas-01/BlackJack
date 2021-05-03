@@ -35,11 +35,13 @@ GameManager::GameManager()
 
 void GameManager::Menu() {
 
+	cout << "____________________________" << endl;
 	cout << "Welcome to BlackJack " << endl;
 	cout << "It's you vs the computer!" << endl << endl;
 
-	std::chrono::seconds dura(5);
+	std::chrono::seconds dura(3);
 	std::this_thread::sleep_for(dura);
+
 }
 
 //Runs the game 
@@ -104,9 +106,9 @@ void GameManager::displayCurrent()
 {
 	printHand(player);
 	cout << "Total Score: " << totalScore(player) << endl << endl;
-
+	
 	printHand(dealer);
-	cout << "Total Score: " << totalScore(dealer) << endl << endl;
+	cout << " Total Score: " << totalScore(dealer) << endl << endl;
 }
 
 //Score of the player
@@ -194,7 +196,10 @@ void GameManager::printHand(Player* player)
 	{
 
 		Card* c = (*p->hand)[i];
-		cout << c->Face << " of " << c->Suit << " | Value " << c->cardValue << endl;
+		cout << c->Face << " of " << c->Suit << " |  " << c->cardValue << endl;
+
+		std::chrono::seconds dura(3);
+		std::this_thread::sleep_for(dura);
 
 	}
 }
@@ -207,7 +212,12 @@ string GameManager::getPlayerName()
 	cout << "Enter your name: " << endl;
 	cin >> name;
 
-	std::chrono::seconds dura(3);
+
+	cout << endl;
+	cout << "Welcome " << name << endl << endl;
+	cout << "Your cards will be presented to you shortly..." << endl;
+
+	std::chrono::seconds dura(5);
 	std::this_thread::sleep_for(dura);
 	cout << endl;
 	return name;
