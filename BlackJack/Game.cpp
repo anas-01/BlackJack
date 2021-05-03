@@ -108,7 +108,7 @@ void GameManager::displayCurrent()
 	cout << "Total Score: " << totalScore(player) << endl << endl;
 	
 	printHand(dealer);
-	cout << " Total Score: " << totalScore(dealer) << endl << endl;
+	cout << "Total Score: " << totalScore(dealer) << endl << endl;
 }
 
 //Score of the player
@@ -186,7 +186,7 @@ int GameManager::getHitOrStand()
 //	cout << c->Face << " of " << c->Suit << " : Value " << c->cardValue << endl << endl;
 //}
 
-//prints the hand of the specified player
+//Prints the hand of the player
 void GameManager::printHand(Player* player)
 {
 	Player* p = player;
@@ -196,7 +196,7 @@ void GameManager::printHand(Player* player)
 	{
 
 		Card* c = (*p->hand)[i];
-		cout << c->Face << " of " << c->Suit << " |  " << c->cardValue << endl;
+		cout << c->Face << " of " << c->Suit << " | " << c->cardValue << endl;
 
 		std::chrono::seconds dura(3);
 		std::this_thread::sleep_for(dura);
@@ -237,12 +237,14 @@ void GameManager::checkWin(int playerScore, int dealerScore)
 
 	if (pScore > 21 || dScore == 21)
 	{
+		cout << "You went bust!" << endl;
 		cout << "You lost!" << endl;
 		return;
 	}
 
 	if (dScore > 21 || pScore == 21)
 	{
+		cout << "Dealer went bust!" << endl;
 		cout << "You won!" << endl;
 		return;
 	}
