@@ -116,6 +116,7 @@ int GameManager::totalScore(Player* player)
 {
 	Player* p = player;
 	int total = 0;
+
 	//Ace is either 1 or 11
 	bool aceOver21 = false;
 	int numOfAces = 0;
@@ -129,7 +130,7 @@ int GameManager::totalScore(Player* player)
 		total += c->cardValue;
 	}
 
-	//Implementation of the 11 or 1 Ace rule
+	//Implementation of the 1 or 11 Ace rule
 	if (total > 21 && numOfAces != 0)
 	{
 		while (total > 21 && numOfAces != 0)

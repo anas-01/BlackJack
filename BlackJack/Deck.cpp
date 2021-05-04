@@ -44,10 +44,10 @@ void Deck::createDeck()
 
 	for (int x = 0; x < 52; x++)
 	{
-		string f = faces[x % 13];
-		string s = suits[New_Suit];
+		string face = faces[x % 13];
+		string suit = suits[New_Suit];
 		int p = CardValue[x % 13];
-		Card* c = new Card(f, s, p);
+		Card* c = new Card(face, suit, p);
 		this->m_cards->push_back(c);
 
 		//just for making sure the deck gets made
