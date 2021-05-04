@@ -35,7 +35,7 @@ GameManager::GameManager()
 
 void GameManager::Menu() {
 
-	cout << "____________________________" << endl;
+	cout << endl;
 	cout << "Welcome to BlackJack " << endl;
 	cout << "It's you vs the computer!" << endl << endl;
 
@@ -80,6 +80,7 @@ void GameManager::playBlackjack(Player* player, Player* dealer, Deck* d)
 				cout << "You lost!" << endl;
 				break;
 			}
+
 		}
 		//Stick
 		if (input == 0)
@@ -120,14 +121,14 @@ int GameManager::totalScore(Player* player)
 	bool aceOver21 = false;
 	int numOfAces = 0;
 
-	for (int i = 0; i < p->hand->size(); i++) 
+	for (int i = 0; i < p->hand->size(); i++)
 	{
 		Card* c = (*p->hand)[i];
 
-	if	(c->cardValue == 11)
-	{
-		numOfAces += 1;
-	}
+		if (c->cardValue == 11)
+		{
+			numOfAces += 1;
+		}
 		total += c->cardValue;
 	}
 
@@ -277,7 +278,7 @@ bool GameManager::checkInstantWin(int playerS, int dealerS)
 
 	if (ps == 21)
 	{
-		cout << "You Hit 21! You Won " << endl;
+		cout << "You Hit 21, You Won! " << endl;
 		return true;
 	}
 
