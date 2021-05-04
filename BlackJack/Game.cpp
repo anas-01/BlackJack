@@ -101,12 +101,11 @@ void GameManager::playBlackjack(Player* player, Player* dealer, Deck* d)
 	}
 }
 
-//Displays current scores
 void GameManager::displayCurrent()
 {
 	printHand(player);
 	cout << "Total Score: " << totalScore(player) << endl << endl;
-	
+
 	printHand(dealer);
 	cout << "Total Score: " << totalScore(dealer) << endl << endl;
 }
@@ -120,13 +119,15 @@ int GameManager::totalScore(Player* player)
 	//Ace is either 1 or 11
 	bool aceOver21 = false;
 	int numOfAces = 0;
-	for (int i = 0; i < p->hand->size(); i++)
+
+	for (int i = 0; i < p->hand->size(); i++) 
 	{
 		Card* c = (*p->hand)[i];
-		if (c->cardValue == 11)
-		{
-			numOfAces += 1;
-		}
+
+	if	(c->cardValue == 11)
+	{
+		numOfAces += 1;
+	}
 		total += c->cardValue;
 	}
 
@@ -199,7 +200,7 @@ void GameManager::printHand(Player* player)
 		Card* c = (*p->hand)[i];
 		cout << c->Face << " of " << c->Suit << " | " << c->cardValue << endl;
 
-		std::chrono::seconds dura(3);
+		std::chrono::seconds dura(2);
 		std::this_thread::sleep_for(dura);
 
 	}
@@ -212,7 +213,6 @@ string GameManager::getPlayerName()
 	string name;
 	cout << "Enter your name: " << endl;
 	cin >> name;
-
 
 	cout << endl;
 	cout << "Welcome " << name << endl << endl;
