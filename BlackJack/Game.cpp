@@ -171,6 +171,14 @@ int GameManager::getHitOrStand()
 
 		if (input == 1 || input == 0)
 		{
+			if (input == 1) {
+				cout << "You decided to Hit! " << endl << endl;
+			}
+
+			if (input == 0) {
+				cout << "You decided to Stay" << endl << endl;
+			}
+
 			std::chrono::seconds dura(5);
 			std::this_thread::sleep_for(dura);
 			return input;

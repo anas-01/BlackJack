@@ -50,12 +50,6 @@ void Deck::createDeck()
 		Card* c = new Card(face, suit, p);
 		this->m_cards->push_back(c);
 
-		//just for making sure the deck gets made
-		/*for (int x = 0; x < 52; x++)
-		{
-			cout << c->Face << " of " << c->Suit << " : Value of " << c->cardValue << endl;
-		}*/
-
 		if ((x + 1) % 13 == 0)
 		{
 			New_Suit++;
