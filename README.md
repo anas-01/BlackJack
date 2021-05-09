@@ -1,1 +1,2 @@
-In working progress...
+Implementation of the popular cards game called Blackjack.
+
