@@ -103,6 +103,7 @@ void GameManager::playBlackjack(Player* player, Player* dealer, Deck* d)
 	}
 }
 
+//Displays the current total
 void GameManager::displayCurrent()
 {
 	printHand(player);
@@ -112,7 +113,7 @@ void GameManager::displayCurrent()
 	cout << "Total Score: " << totalScore(dealer) << endl << endl;
 }
 
-//Score of the player
+
 int GameManager::totalScore(Player* player)
 {
 	Player* p = player;
@@ -159,6 +160,7 @@ void GameManager::drawCard(Player* playerWhoDraws, vector<Card*>* deckToDrawFrom
 		d->erase(d->begin());
 	}
 }
+
 int GameManager::getHitOrStand()
 {
 	int input;
