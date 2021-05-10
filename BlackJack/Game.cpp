@@ -278,7 +278,6 @@ string GameManager::getPlayerName()
 	}
 
 
-
 bool GameManager::checkInstantWin(int playerS, int dealerS)
 {
 	int ps = playerS;
