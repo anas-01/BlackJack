@@ -57,6 +57,7 @@ void Deck::createDeck()
 	}
 }
 
+// Randomised Shuffle
 void Deck::shuffle()
 {
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
