@@ -62,6 +62,7 @@ void GameManager::playBlackjack(Player* player, Player* dealer, Deck* d)
 	while (true)
 	{
 		int ps = totalScore(player);
+		//int ps = totalScore(player);
 		int ds = totalScore(dealer);
 
 		if (checkInstantWin(ps, ds) == true)
@@ -193,6 +194,7 @@ int GameManager::getHitOrStand()
 
 }
 
+
 //Prints the hand of the player
 void GameManager::printHand(Player* player)
 {
@@ -234,45 +236,48 @@ string GameManager::getPlayerName()
 
 }
 
-void GameManager::checkWin(int playerScore, int dealerScore)
-{
-	int pScore = playerScore;
-	int dScore = dealerScore;
 
-	if (pScore == dScore)
+	void GameManager::checkWin(int playerScore, int dealerScore)
 	{
-		cout << "It's a tie!" << endl;
-		return;
+		int pScore = playerScore;
+		int dScore = dealerScore;
+
+		if (pScore == dScore)
+		{
+			cout << "It's a tie!" << endl;
+			return;
+		}
+
+		if (pScore > 21 || dScore == 21)
+		{
+			cout << "You went bust!" << endl;
+			cout << "You lost!" << endl;
+			return;
+		}
+
+		if (dScore > 21 || pScore == 21)
+		{
+			cout << "Dealer went bust!" << endl;
+			cout << "You won!" << endl;
+			return;
+		}
+
+		if (dScore < 21 && dScore > pScore)
+		{
+			cout << "You lost!" << endl;
+			return;
+		}
+
+		if (pScore < 21 && pScore > dScore)
+			
+		{
+			cout << "You won!" << endl;
+			return;
+		}
+	
 	}
 
-	if (pScore > 21 || dScore == 21)
-	{
-		cout << "You went bust!" << endl;
-		cout << "You lost!" << endl;
-		return;
-	}
 
-	if (dScore > 21 || pScore == 21)
-	{
-		cout << "Dealer went bust!" << endl;
-		cout << "You won!" << endl;
-		return;
-	}
-
-	if (dScore < 21 && dScore > pScore)
-	{
-		cout << "You lost!" << endl;
-		return;
-	}
-
-	if (pScore < 21 && pScore > dScore)
-
-	{
-		cout << "You won!" << endl;
-		return;
-	}
-
-}
 
 bool GameManager::checkInstantWin(int playerS, int dealerS)
 {

@@ -6,10 +6,10 @@
 class Player
 {
 public:
-	Player(std::string name, std::vector<Card*>* hand);
-	~Player();
-	std::string name;
-	int handTotal;
-	std::vector<Card*>* hand;
+    Player(std::string name, std::vector<Card*>* hand);
+    ~Player();
+    std::string name;
+    int handTotal;
+    std::vector<Card*>* hand;
 };
 
