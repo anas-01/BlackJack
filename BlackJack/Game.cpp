@@ -194,7 +194,6 @@ int GameManager::getHitOrStand()
 
 }
 
-
 //Prints the hand of the player
 void GameManager::printHand(Player* player)
 {
@@ -235,7 +234,6 @@ string GameManager::getPlayerName()
 	return name;
 
 }
-
 
 	void GameManager::checkWin(int playerScore, int dealerScore)
 	{
