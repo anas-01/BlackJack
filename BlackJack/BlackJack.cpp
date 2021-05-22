@@ -1,8 +1,8 @@
 /*
 
-Author: Anas
+Author: Anas - Student
+About: Blackjack Card Game for University Assignment using Pointers, Dynamic Arrays and OOP
 Date Created: 10/04/2021
-About: Blackjack Card Game
 File: Main
 
 */
