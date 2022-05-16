@@ -57,7 +57,7 @@ void Deck::createDeck()
 	}
 }
 
-// Randomised Shuffle for the Deck
+// Deck of cards being shuffled randomly
 void Deck::shuffle()
 {
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
